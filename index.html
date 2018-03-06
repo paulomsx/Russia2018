@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8">
+    <title>Álbum da Copa 2018</title>
+    <link rel="stylesheet" href="icons/material.css">
+    <link rel="stylesheet" href="css/materialize.min.css">
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+
+<body>
+
+    <ul id="slide-out" class="side-nav">
+        <li>
+            <div class="user-view">
+                <div class="background">
+                    <img src="images/logo.png">
+                </div>
+                <br><br>
+                <div id="usuario"></div>
+                <div id="email"></div>
+            </div>
+        </li>
+
+        <li><a href="#!" onclick="ShowLoading();"><i class="material-icons">backup</i>Salvar alterações</a></li>
+        <li><a href="entrada.html"><i class="material-icons">loyalty</i>Tela principal</a></li>
+        <li><a href="#!" onclick="exitFromApp();"><i class="material-icons">exit_to_app</i>Sair</li>
+        <li><div class="divider"></div></li>
+    </ul>
+
+    <div class="topo-fixo z-depth-1">
+        <div class="valign-wrapper red darken-4 white-text">
+            <div style="padding-top: 5px;">
+                <a href="#" data-activates="slide-out" class="button-collapse red  darken-4 white-text margin_menu">
+                  <i class="material-icons">menu</i>
+                </a>  
+            </div>
+            <h5 class="titulo">RÚSSIA 2018</h5>
+        </div>
+
+        <ul class="tabs red darken-4">
+            <li class="tab">
+                <a href="#faltam"
+                   class="white-text waves-effect waves-light">
+                    Faltantes
+                </a>
+            </li>
+            <li class="tab">
+                <a href="#repetidas" class="white-text waves-effect waves-light">
+                    Repetidas
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    <div id="faltam" class="section">
+        <center>    
+        <div id="fig-faltam"></div>
+        </center>
+    </div>
+    
+    <div id="repetidas" class="section">
+        <center>
+        <div id="fig-repetidas"></div>
+        </center>
+    </div>
+
+    <script type="text/javascript" charset="utf-8" src="cordova.js"></script> 
+    <script src="js/vendor/jquery.min.js"></script> 
+    <script src="js/vendor/materialize.min.js"></script>
+
+    <script src="js/biblioteca.js"></script>
+    <script src="js/local.js"></script>
+    <script src="js/album.js"></script>
+    <script src="js/usuario.js"></script>
+    <script src="js/default.js"></script>
+    
+
+</body>
+</html>

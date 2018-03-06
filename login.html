@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8">
+    <title>RÚSSIA 2018</title>
+    <link rel="stylesheet" href="icons/material.css">
+    <link rel="stylesheet" href="css/materialize.min.css">
+    <style>
+        body {
+            background-color: aliceblue; 
+        }
+    </style>
+</head>
+
+<body>
+  <div class="row">
+    <form class="col s12" onsubmit="login()">
+      <div class="row">
+            <div class="row">
+                <div class="col s12">
+                    <br>
+                    <center>
+                    <h4>LOGIN</h4>
+                    </center>
+                </div>
+                <br>
+            </div>            
+
+            <div class="row">
+                <div class="input-field col s12">
+                    <input type="text" id="email-input">
+                    <label for="email-input">E-mail</label>
+                </div>
+                <div class="input-field col s12">
+                    <input type="password" id="senha-input">
+                    <label for="senha-input">Senha</label>
+                </div>                
+                <center>    
+                    <button class="btn waves-effect waves-light blue darken-4" type="submit" name="action">Entrar
+                    </button> 
+                </center>
+            </div>
+        </div>
+    </form>
+
+    <script src="js/vendor/jquery.min.js"></script> 
+    <script src="js/vendor/materialize.min.js"></script>
+    <script src="js/dao.js"></script>
+    <script src="js/local.js"></script>
+
+    <script>
+        
+        function login(){
+
+            event.preventDefault();
+
+            let email = $("#email-input").val();
+            let senha = $("#senha-input").val();
+
+            if ($("#email-input").val()==""){
+                alert("Informe o e-mail.");
+                return false;
+            }
+            else
+                if (!validateEmail($("#email-input").val())) {
+                    alert("E-mail inválido");
+                    return false;
+                }
+
+            if ($("#senha-input").val()==""){
+                alert("Informe a senha.");
+                return false;
+            } 
+
+            /*********************************************************/    
+            let srv = new dao(
+                "login",
+                `{email: "${email}", senha: "${senha}"}`
+            );
+                
+            srv.http("POST").then(dados => {
+
+                localStorage.setItem("faltantes", dados.faltantes);
+                localStorage.setItem("repetidas", dados.repetidas);
+                // localStorage.setItem("nome", dados.nome);
+                // localStorage.setItem("email", dados.email);
+
+                let  originalObject = { id: dados.id, nome: dados.nome, email: dados.email };
+                var jsonString = JSON.stringify( originalObject ); 
+                localStorage.setItem("usuario", jsonString);
+
+                //var objectFromString = JSON.parse( jsonString );   // { foo: "bar" }
+
+              
+                $(location).attr('href',"index.html");    
+            }).catch(err => {
+                alert(err);
+                return false;
+            });
+            /*********************************************************/
+
+        }//login        
+
+
+        function validateEmail(email) {
+            var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+            return re.test(email.toLowerCase());
+        }
+
+    </script>
+
+</body>
+</html>
+    

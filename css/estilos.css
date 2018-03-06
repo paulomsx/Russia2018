@@ -1,0 +1,74 @@
+/* estilo inicial */
+body {
+    background-color:#0D47A1; 
+    background-image: url("../images/fundo.png");
+    background-repeat: repeat;
+
+}
+
+/* estilo do titulo */
+.titulo {
+    font-size: 1.3rem;
+    margin-right
+}
+
+/* cor da aba */
+.tabs .indicator {
+    background-color: white;
+}
+
+/* fixo no topo */
+.topo-fixo {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 2;
+}
+.section {
+    padding-top: 125px;
+}
+
+.margin_menu{
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+
+header, main, footer {
+  padding-left: 300px;
+}
+
+@media only screen and (max-width : 992px) {
+  header, main, footer {
+    padding-left: 0;
+  }
+}
+
+
+
+.REPETIDAS_ON {  font-weight: bold;    border-radius: 5px;    margin: 5px; color: #FFFFFF; border: 2px solid rgb(189, 7, 7) ; background-color: red; cursor: pointer; text-align: center; width: 53px; height: 38px;}
+.FALTANTES_ON {  font-weight: bold;    border-radius: 5px;    margin: 5px; color: #FFFFFF; border: 2px solid #0D47A1 ; background-color: #6666FF; cursor: pointer; text-align: center; width: 53px; height: 38px;}
+.FALTANTES_OFF { font-weight: bold;    border-radius: 5px;    margin: 5px; color: #0D47A1; border: 2px solid #0D47A1 ; background-color: #ffffff; cursor: pointer; text-align: center;  width: 53px; height: 38px;}
+.REPEDITAS_OFF { font-weight: bold;    border-radius: 5px;    margin: 5px; color:red ; border: 2px solid rgb(189, 7, 7) ; background-color: #ffffff; cursor: pointer; text-align: center;  width: 53px; height: 38px;}
+
+/* .FD {  padding: 10px; color: #FFFFFF; border: solid 1px #cccccc; background-color: #6666FF; cursor: pointer; text-align: center; width: 43px; height: 28px; }
+.FDV { padding: 10px; color: #000000; border: solid 1px #cccccc; background-color: #efefff; cursor: pointer; text-align: center; width: 43px; height: 28px; } */
+
+
+.badge1 {
+    position:relative;
+ }
+ .badge1[data-badge]:after {
+    content:attr(data-badge);
+    position:absolute;
+    top:15px;
+    right:0px;
+    font-size:.7em;
+    background:yellow;
+    color:black;
+    width:18px;height:18px;
+    text-align:center;
+    line-height:18px;
+    border-radius:50%;
+    box-shadow:0 0 1px #333;
+ }
