@@ -6,6 +6,37 @@ body {
 
 }
 
+/* label color */
+.input-field label {
+    color: #005eed;
+}
+/* label focus color */
+.input-field input[type=text]:focus + label {
+    color: #005eed;
+}
+
+/* label focus color */
+.input-field input[type=text]:focus + label, .materialize-textarea:focus:not([readonly]) + label {
+    color: #005eed !important;
+}
+
+/* label underline focus color */
+.input-field input[type=text]:focus, .materialize-textarea:focus:not([readonly]) {
+    border-bottom: 1px solid #005eed !important;
+    box-shadow: 0 1px 0 0 #005eed !important;
+}
+
+/* label focus color */
+.input-field input[type=password]:focus + label, .materialize-textarea:focus:not([readonly]) + label {
+    color: #005eed !important;
+}
+
+/* label underline focus color */
+.input-field input[type=password]:focus, .materialize-textarea:focus:not([readonly]) {
+    border-bottom: 1px solid #005eed !important;
+    box-shadow: 0 1px 0 0 #005eed !important;
+}
+
 /* estilo do titulo */
 .titulo {
     font-size: 1.3rem;

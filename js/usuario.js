@@ -4,9 +4,11 @@ class Usuario{
        
         let  objectFromString = JSON.parse(localStorage.getItem("usuario"));   
 
-        this.id = objectFromString.id;
-        this.nome = objectFromString.nome;
-        this.email = objectFromString.email;
+        if (objectFromString!=null){
+            this.id = objectFromString.id;
+            this.nome = objectFromString.nome;
+            this.email = objectFromString.email;
+        }   
     }
     
     Ativar(id, nome, email){

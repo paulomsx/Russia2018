@@ -16,4 +16,4 @@ $(document).ready(function(){
 
     $("#usuario").html(usuario.nome);
     $("#email").html(usuario.email);
-});
+}); 
